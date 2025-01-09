@@ -8,11 +8,83 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="GuitarInator"
+        android:textSize="30dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="200dp"
+        android:fontFamily=""
+        />
+
+    <!--<Button
+        android:id="@+id/login"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:text="Login"
+        android:layout_below="@id/title"
+        android:layout_marginLeft="105dp"
+        android:layout_marginTop="50dp"
+        />-->
+    <Button
+        android:id="@+id/Signin"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:text="Sign in"
+        android:layout_below="@id/title"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="50dp"
+        />
+    <TextView
+        android:id="@+id/login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Login with:"
+        android:layout_below="@id/Signin"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="20dp"
+
+        />
+    <ImageButton
+        android:id="@+id/google"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/goolge"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:maxWidth="80dp"
+        android:layout_toRightOf="@id/login"
+        android:layout_below="@id/Signin"
+        android:layout_marginTop="10dp"
+        />
+    <ImageButton
+        android:id="@+id/guitar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/guitar_logo1"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:maxHeight="80dp"
+        android:layout_below="@id/Signin"
+        android:layout_toRightOf="@id/google"
+        />
+    <ImageButton
+        android:id="@+id/email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/email"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:maxWidth="80dp"
+        android:layout_below="@id/Signin"
+        android:layout_toRightOf="@id/guitar"
+        android:layout_marginTop="13dp"
+        />
 
 </RelativeLayout>
