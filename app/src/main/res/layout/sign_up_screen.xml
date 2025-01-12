@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/gradient">
+
+    <ImageView
+        android:id="@+id/Logo"
+        android:layout_width="340dp"
+        android:layout_height="284dp"
+        android:layout_marginTop="70dp"
+        android:contentDescription="@string/logo"
+        app:srcCompat="@drawable/jackson_king_v_white_onblack_removebg_preview"
+        android:layout_centerHorizontal="true">
+
+    </ImageView>
+    <RelativeLayout
+        android:layout_width="340dp"
+        android:layout_height="300dp"
+        android:layout_below="@id/Logo"
+        android:background="@drawable/layout_shape"
+        android:layout_centerHorizontal="true">
+
+        <EditText
+            android:id="@+id/username"
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:hint="@string/username"
+            android:drawableStart="@drawable/baseline_person_24_30dp"
+            android:layout_marginTop="15dp"
+            android:textColor="@color/white"
+            android:background="@drawable/edit_text_layout"
+            android:textColorHint="@color/white"
+            android:layout_centerHorizontal="true"
+            android:textAlignment="center"
+            android:paddingStart="10dp"
+            android:paddingEnd="30dp">
+
+        </EditText>
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:hint="@string/password"
+            android:drawableStart="@drawable/baseline_lock_24_30dp"
+            android:layout_marginTop="15dp"
+            android:textColor="@color/white"
+            android:background="@drawable/edit_text_layout"
+            android:textColorHint="@color/white"
+            android:layout_centerHorizontal="true"
+            android:textAlignment="center"
+            android:paddingStart="10dp"
+            android:paddingEnd="30dp"
+            android:layout_below="@id/username">
+
+        </EditText>
+        <EditText
+            android:id="@+id/reenter_password"
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:hint="@string/re_enter_password"
+            android:drawableStart="@drawable/baseline_lock_24_30dp"
+            android:layout_marginTop="15dp"
+            android:textColor="@color/white"
+            android:background="@drawable/edit_text_layout"
+            android:textColorHint="@color/white"
+            android:layout_centerHorizontal="true"
+            android:textAlignment="center"
+            android:paddingStart="10dp"
+            android:paddingEnd="30dp"
+            android:layout_below="@id/password">
+
+        </EditText>
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/reenter_password"
+            android:layout_centerHorizontal="true"
+            android:text="@string/sign_up"
+            android:background="@drawable/buttons"
+            android:textColor="@color/white"
+            android:layout_marginTop="12dp">
+
+        </androidx.appcompat.widget.AppCompatButton>
+    </RelativeLayout>
+
+</RelativeLayout>

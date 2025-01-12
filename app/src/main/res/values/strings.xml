@@ -3,4 +3,16 @@
     <string name="профил_здр">Здравей!</string>
     <string name="баланс">Баланс:</string>
     <string name="pick_a_profile_picture">Pick a profile picture</string>
+    <string name="register">Register</string>
+    <string name="login">LOGIN</string>
+    <string name="password">Password</string>
+    <string name="username">Username</string>
+    <string name="LOGIN">LOGIN</string>
+    <string name="logo">LOGO</string>
+    <string name="sign_up_with_facebook">Sign up with Facebook</string>
+    <string name="sign_up_with_google">Sign up with Google</string>
+    <string name="sign_up_with_instagram">Sign up with Instagram</string>
+    <string name="sign_up">Sign up</string>
+    <string name="sign_up_with">sign up with:</string>
+    <string name="re_enter_password">Re-enter password</string>
 </resources>
