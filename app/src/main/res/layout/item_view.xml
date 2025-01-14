@@ -1,23 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/gradient"
+    android:layout_height="wrap_content"
+
     xmlns:app="http://schemas.android.com/apk/res-auto">
-<View
+    <RelativeLayout
     android:layout_width="320dp"
-    android:layout_height="600dp"
+    android:layout_height="wrap_content"
     android:layout_centerHorizontal="true"
-    android:layout_marginTop="18dp"
+    android:layout_marginTop="30dp"
     android:background="@drawable/layout_shape"
-    />
+    android:layout_marginBottom="50dp"
+    >
     <ImageView
         android:layout_width="300dp"
         android:layout_height="350dp"
         android:id="@+id/img1"
-        android:src="@drawable/epiphone_es335"
+        android:src="@drawable/es335"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
 
 />
     <TextView
@@ -37,6 +38,7 @@ Scale	24.724
         android:layout_centerHorizontal="true"
         android:layout_below="@id/img1"
         android:textSize="15sp"
+        android:textColor="#550000"
         />
 <TextView
     android:id="@+id/price1"
@@ -54,5 +56,9 @@ Scale	24.724
         android:text="Add to cart"
         android:layout_below="@id/price1"
         android:layout_centerHorizontal="true"
+        android:background="@drawable/buttons"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="10dp"
         />
+    </RelativeLayout>
 </RelativeLayout>
