@@ -81,6 +81,7 @@
 
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/signup_btn"
             android:text="@string/sign_up"
             android:layout_width="150dp"
             android:layout_height="wrap_content"

@@ -12,17 +12,30 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GuitarShopMobile"
         tools:targetApi="31" >
-        <activity
-            android:name=".Cart"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
-            android:exported="true" >
+
+
+        <activity android:name=".LoginScreen"
+            android:exported="true"
+            android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER">
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                </category>
+
             </intent-filter>
+        </activity>
+        <activity android:name=".SignUpScreen"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.example.guitarshopmobile.SignUpScreen">
+
+                </action>
+                <category android:name="android.intent.category.DEFAULT">
+
+                </category>
+            </intent-filter>
+
         </activity>
     </application>
 
