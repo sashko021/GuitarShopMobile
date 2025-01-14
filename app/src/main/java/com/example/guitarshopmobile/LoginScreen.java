@@ -19,6 +19,7 @@ public class LoginScreen extends AppCompatActivity {
 
         setContentView(R.layout.login_screen_layout);
         AppCompatButton sign_up_btn = findViewById(R.id.signup_btn);
+        AppCompatButton login_btn = findViewById(R.id.Login_button);
         username = findViewById(R.id.username);
         password = findViewById(R.id.password);
 
@@ -27,6 +28,16 @@ public class LoginScreen extends AppCompatActivity {
             public void onClick(View view) {
                 Intent signup = new Intent("com.example.guitarshopmobile.SignUpScreen");
                 startActivity(signup);
+            }
+        });
+
+
+
+        login_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent login = new Intent("android.intent.action.MAIN");
+                startActivity(login);
             }
         });
 
