@@ -26,7 +26,7 @@ public class LoginScreen extends AppCompatActivity {
         sign_up_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent signup = new Intent("com.example.guitarshopmobile.SignUpScreen");
+                Intent signup = new Intent(LoginScreen.this, SignUpScreen.class);
                 startActivity(signup);
             }
         });
@@ -36,7 +36,7 @@ public class LoginScreen extends AppCompatActivity {
         login_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent login = new Intent("android.intent.action.MAIN");
+                Intent login = new Intent(LoginScreen.this, ElectricGuitar.class);
                 startActivity(login);
             }
         });

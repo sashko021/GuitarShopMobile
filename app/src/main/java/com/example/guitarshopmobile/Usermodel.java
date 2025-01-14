@@ -1,6 +1,6 @@
 package com.example.guitarshopmobile;
 
-public class users {
+public class Usermodel {
 
     private int id;
     private String username;
@@ -8,7 +8,7 @@ public class users {
     private String password;
 
 
-    public users(int id, String username, String email, String password) {
+    public Usermodel(int id, String username, String email, String password) {
         this.id = id;
         this.username = username;
         this.email = email;

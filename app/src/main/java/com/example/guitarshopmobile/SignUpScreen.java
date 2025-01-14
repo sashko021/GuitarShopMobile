@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
@@ -35,6 +36,21 @@ public class SignUpScreen extends AppCompatActivity {
                 startActivity(backtoLogin);
             }
         });
+        btn_sign.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Usermodel usermodel;
+
+                    usermodel = new Usermodel(1,username.getText().toString(),email.getText().toString(), password.getText().toString());
+
+             SQLiteHelper sqliteHelper = new SQLiteHelper(SignUpScreen.this);
+
+                 boolean success = sqliteHelper.addOne( usermodel );
+
+                Toast.makeText(SignUpScreen.this, "Success="+ success, Toast.LENGTH_LONG).show();
+            }
+        });
+
 
     }
 }
