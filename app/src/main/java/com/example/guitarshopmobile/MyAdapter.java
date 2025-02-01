@@ -23,12 +23,12 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new MyViewHolder(LayoutInflater.from(context).inflate(R.layout.activity_item_view,parent,false));
+        return new MyViewHolder(LayoutInflater.from(context).inflate(R.layout.item_view,parent,false));
     }
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-//        holder.descView.setText(items.get(position).getDescription());
+        holder.descView.setText(items.get(position).getDescription());
         holder.priceView.setText(items.get(position).getPrice());
         holder.imgGuitar.setImageResource(items.get(position).getImage());
     }
