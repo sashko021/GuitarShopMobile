@@ -11,10 +11,15 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
+
 
 public class SignUpScreen extends AppCompatActivity {
 
-    EditText email,username, password, repassword;
+    TextInputLayout password_layout, reenter_password_layout;
+    TextInputEditText password, repassword;
+    EditText email,username;
     AppCompatButton btn_sign;
     ImageButton back_button;
 
@@ -23,6 +28,8 @@ public class SignUpScreen extends AppCompatActivity {
         super.onCreate(SavedInstanceState);
 
         setContentView(R.layout.sign_up_screen);
+        password_layout = findViewById(R.id.password_layout);
+        reenter_password_layout = findViewById(R.id.reenter_password_layout);
         email = findViewById(R.id.email);
         username = findViewById(R.id.username);
         password = findViewById(R.id.password);
@@ -42,18 +49,29 @@ public class SignUpScreen extends AppCompatActivity {
             public void onClick(View view) {
                 Usermodel usermodel;
                 DBHelper dbHelper = new DBHelper(SignUpScreen.this);
-                try{
-                    usermodel = new Usermodel(1, username.getText().toString(), email.getText().toString(), password.getText().toString());
-                    Toast.makeText(SignUpScreen.this, "Success", Toast.LENGTH_SHORT).show();
-                    dbHelper.addOne(usermodel);
-                    int version = dbHelper.dbVersion();
-                    Toast.makeText(SignUpScreen.this, "Version is:" + version , Toast.LENGTH_SHORT).show();
-                    dbHelper.close();
+                // usermodel = new Usermodel(1, username.getText().toString(), email.getText().toString(), password.toString());
+                //Check correctness of username
+                if (username.getText().toString().isEmpty()){
+                    Toast.makeText(SignUpScreen.this, "Username field is empty", Toast.LENGTH_SHORT).show();
+                }
+                //Check correctness of email
+                if (email.getText().toString().isEmpty()){
+                    Toast.makeText(SignUpScreen.this, "Email field is empty", Toast.LENGTH_SHORT).show();
+                }
+                //Check correctness of password
+                if (password.toString().isEmpty()){
+                    Toast.makeText(SignUpScreen.this, "Password field is empty", Toast.LENGTH_SHORT).show();
+                }
+                //Check correctness of second password
+                if (repassword.toString().isEmpty()){
+                    Toast.makeText(SignUpScreen.this, "Repeat password field is empty", Toast.LENGTH_SHORT).show();
+                }
+                //Check if the passwords are the same
+                else if(!password.getText().toString().equals(repassword.getText().toString())){
+                    Toast.makeText(SignUpScreen.this, "The passwords do not match", Toast.LENGTH_SHORT).show();
+                }
 
-                }
-                catch (Exception e){
-                    Toast.makeText(SignUpScreen.this, "Fail", Toast.LENGTH_SHORT).show();
-                }
+
 
             }
         });
