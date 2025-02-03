@@ -50,22 +50,33 @@ public class SignUpScreen extends AppCompatActivity {
                 Usermodel usermodel;
                 DBHelper dbHelper = new DBHelper(SignUpScreen.this);
                 // usermodel = new Usermodel(1, username.getText().toString(), email.getText().toString(), password.toString());
-                //Check correctness of username
-                if (username.getText().toString().isEmpty()){
-                    Toast.makeText(SignUpScreen.this, "Username field is empty", Toast.LENGTH_SHORT).show();
-                }
                 //Check correctness of email
                 if (email.getText().toString().isEmpty()){
                     Toast.makeText(SignUpScreen.this, "Email field is empty", Toast.LENGTH_SHORT).show();
                 }
+                else {
+                    boolean exists = dbHelper.getEmail(email.getText().toString());
+                    if (exists){
+                        Toast.makeText(SignUpScreen.this, "An account using this email already exists.", Toast.LENGTH_SHORT).show();
+                    }
+                    else Toast.makeText(SignUpScreen.this, "Light weight babyyy", Toast.LENGTH_SHORT).show();
+                }
+
+                //Check correctness of username
+                if (username.getText().toString().isEmpty()){
+                    Toast.makeText(SignUpScreen.this, "Username field is empty", Toast.LENGTH_SHORT).show();
+                }
+
                 //Check correctness of password
                 if (password.toString().isEmpty()){
                     Toast.makeText(SignUpScreen.this, "Password field is empty", Toast.LENGTH_SHORT).show();
                 }
+
                 //Check correctness of second password
                 if (repassword.toString().isEmpty()){
                     Toast.makeText(SignUpScreen.this, "Repeat password field is empty", Toast.LENGTH_SHORT).show();
                 }
+
                 //Check if the passwords are the same
                 else if(!password.getText().toString().equals(repassword.getText().toString())){
                     Toast.makeText(SignUpScreen.this, "The passwords do not match", Toast.LENGTH_SHORT).show();

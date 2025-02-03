@@ -2,6 +2,7 @@ package com.example.guitarshopmobile;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -64,13 +65,32 @@ public class DBHelper extends SQLiteOpenHelper {
         cv.put(PASSWORD, usermodel.getPassword());
 
         long insert = db.insert(USERS, null, cv);
+        db.close();
         return insert != -1;
     }
 
     //remove one user
     public int removeOne(String id){
         SQLiteDatabase db = this.getWritableDatabase();
+        db.close();
         return db.delete(USERS,"ID = ?", new String[]{id});
+    }
+
+    //Check if user exists
+    public boolean getEmail(String email){
+        SQLiteDatabase db = this.getReadableDatabase();
+        String[] projection = {
+                EMAIL
+        };
+        String selection = EMAIL + " =?";
+        String[] selectionArgs = { email };
+
+        Cursor cursor = db.query(USERS, projection, selection, selectionArgs, null,null,null,"1");
+        boolean exists;
+        exists = cursor.moveToFirst();
+        cursor.close();
+        db.close();
+        return exists;
     }
 
     //check db Version
