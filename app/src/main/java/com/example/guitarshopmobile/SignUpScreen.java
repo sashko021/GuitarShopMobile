@@ -14,6 +14,9 @@ import androidx.appcompat.widget.AppCompatButton;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 
 public class SignUpScreen extends AppCompatActivity {
 
@@ -22,6 +25,14 @@ public class SignUpScreen extends AppCompatActivity {
     EditText email,username;
     AppCompatButton btn_sign;
     ImageButton back_button;
+
+    public boolean isEmailValid(String email)
+    {
+        final String EMAIL_PATTERN = "^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
+        final Pattern pattern = Pattern.compile(EMAIL_PATTERN);
+        final Matcher matcher = pattern.matcher(email);
+        return matcher.matches();
+    }
 
 
     protected void onCreate(Bundle SavedInstanceState) {
@@ -36,6 +47,8 @@ public class SignUpScreen extends AppCompatActivity {
         repassword = findViewById(R.id.reenter_password);
         btn_sign = findViewById(R.id.signup_btn);
         back_button = findViewById(R.id.back_btn);
+
+
 
         back_button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,13 +67,16 @@ public class SignUpScreen extends AppCompatActivity {
                 if (email.getText().toString().isEmpty()){
                     Toast.makeText(SignUpScreen.this, "Email field is empty", Toast.LENGTH_SHORT).show();
                 }
-                else {
+                else if (isEmailValid(email.getText().toString())) {
+                    Toast.makeText(SignUpScreen.this, "Correct", Toast.LENGTH_SHORT).show();
+                    //Check if the email already exists
                     boolean exists = dbHelper.getEmail(email.getText().toString());
                     if (exists){
                         Toast.makeText(SignUpScreen.this, "An account using this email already exists.", Toast.LENGTH_SHORT).show();
                     }
                     else Toast.makeText(SignUpScreen.this, "Light weight babyyy", Toast.LENGTH_SHORT).show();
                 }
+                else Toast.makeText(SignUpScreen.this, "Incorrect", Toast.LENGTH_SHORT).show();
 
                 //Check correctness of username
                 if (username.getText().toString().isEmpty()){
