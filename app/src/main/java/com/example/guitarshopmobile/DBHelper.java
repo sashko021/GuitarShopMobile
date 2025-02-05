@@ -93,6 +93,40 @@ public class DBHelper extends SQLiteOpenHelper {
         return exists;
     }
 
+    //Check if Username exists in db
+
+    public boolean getUsername(String username){
+        SQLiteDatabase db = this.getReadableDatabase();
+        String[] projection = {
+                USERNAME
+        };
+        String selection = USERNAME + " =?";
+        String[] selectionArgs = { username };
+
+        Cursor cursor = db.query(USERS,projection, selection,selectionArgs, null, null, null, "1");
+        boolean exists;
+        exists = cursor.moveToFirst();
+        cursor.close();
+        db.close();
+        return exists;
+    }
+    // Check if an account exists
+    public boolean getPasswordandUsername(String password, String username){
+        SQLiteDatabase db = this.getReadableDatabase();
+        String[] projection = {
+                PASSWORD,USERNAME
+        };
+        String selection = PASSWORD + " =? " +" AND " + USERNAME + " =?";
+        String[] selectionArgs = {password, username };
+
+        Cursor cursor = db.query(USERS, projection, selection, selectionArgs, null, null, null, "1");
+        boolean exists;
+        exists = cursor.moveToFirst();
+        cursor.close();
+        db.close();
+        return exists;
+    }
+
     //check db Version
     public int dbVersion(){
         SQLiteDatabase db = this.getReadableDatabase();

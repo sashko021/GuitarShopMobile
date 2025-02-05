@@ -53,6 +53,7 @@
         android:layout_height="48dp"
         android:hint="@string/password"
         android:textColorHint="@color/white"
+        android:textColor="@color/white"
         android:layout_below="@id/username"
         android:layout_centerHorizontal="true"
         android:drawableStart="@drawable/baseline_lock_24_white"
