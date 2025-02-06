@@ -36,7 +36,7 @@ public class LoginScreen extends AppCompatActivity {
         login_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent login = new Intent(LoginScreen.this, MainActivity.class);
+                Intent login = new Intent(LoginScreen.this, ElectricGuitar.class);
                 startActivity(login);
             }
         });
