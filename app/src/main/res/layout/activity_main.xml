@@ -15,7 +15,7 @@
         android:layout_centerInParent="true"
         android:background="@drawable/layout_shape"
 
-        />
+        >
 
     <ImageView
         android:id="@+id/logo"
@@ -34,7 +34,8 @@
         android:adjustViewBounds="true"
         android:scaleType="fitCenter"
         android:layout_below="@id/logo"
-        android:layout_marginLeft="80dp"
+        android:layout_marginLeft="30dp"
+        android:contentDescription="electric guitar"
         />
     <TextView
         android:id="@+id/elcDesc"
@@ -42,7 +43,7 @@
         android:layout_height="wrap_content"
         android:text="Electric    guitars"
         android:layout_below="@id/electric"
-        android:layout_marginLeft="80dp"
+        android:layout_marginLeft="30dp"
         android:textAlignment="center"
         android:fontFamily=""
         />
@@ -57,6 +58,7 @@
         android:layout_below="@id/logo"
         android:layout_marginLeft="50dp"
         android:layout_toRightOf="@id/electric"
+        android:contentDescription="acoustic guitar"
         />
     <TextView
         android:id="@+id/acDesc"
@@ -76,7 +78,8 @@
         android:adjustViewBounds="true"
         android:scaleType="fitCenter"
         android:layout_below="@id/elcDesc"
-        android:layout_marginLeft="80dp"
+        android:layout_marginLeft="30dp"
+        android:contentDescription="classical guitar"
         />
     <TextView
         android:id="@+id/classDesc"
@@ -84,7 +87,7 @@
         android:layout_height="wrap_content"
         android:text="Classical guitars"
         android:layout_below="@id/classical"
-        android:layout_marginLeft="80dp"
+        android:layout_marginLeft="30dp"
         android:textAlignment="center"
         />
     <ImageButton
@@ -97,6 +100,7 @@
         android:layout_below="@id/acDesc"
         android:layout_marginLeft="50dp"
         android:layout_toRightOf="@id/classical"
+        android:contentDescription="bass guitar"
         />
     <TextView
         android:layout_width="100dp"
@@ -108,7 +112,7 @@
         android:layout_toRightOf="@id/classDesc"
         />
     <TextView
-        android:layout_width="320dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="NEW PRODUCTS:"
         android:layout_centerHorizontal="true"
@@ -118,10 +122,8 @@
         android:background="#333333"
         android:textAlignment="center"
         android:textColor="#DDDDDD"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="110dp"
     />
-    <ScrollView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        />
+    </RelativeLayout>
+
 </RelativeLayout>

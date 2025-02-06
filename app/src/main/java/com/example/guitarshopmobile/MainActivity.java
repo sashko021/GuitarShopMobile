@@ -16,11 +16,16 @@ import android.widget.ImageButton;
 
 public class MainActivity extends AppCompatActivity {
 
+    ImageButton eGuitar;
+    ImageButton aGuitar;
+    ImageButton cGuitar;
+    ImageButton bGuitar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-/*
+
         eGuitar = (ImageButton) findViewById(R.id.electric);
         aGuitar = (ImageButton) findViewById(R.id.acoustic);
         cGuitar = (ImageButton) findViewById(R.id.classical);
@@ -53,6 +58,6 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent (MainActivity.this,BassGuitar.class);
                 startActivity(intent);
             }
-        });*/
+        });
     }
 }

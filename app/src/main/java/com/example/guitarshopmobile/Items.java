@@ -2,7 +2,7 @@ package com.example.guitarshopmobile;
 
 public class Items {
     int image;
-    String description;
+//    String description;
     String price;
 
     public Items(int image,/* String description,*/ String price) {
