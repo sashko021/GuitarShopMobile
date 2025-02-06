@@ -25,7 +25,9 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="55dp"
         />
-
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
     <ImageButton
         android:id="@+id/electric"
         android:layout_width="100dp"
@@ -34,7 +36,7 @@
         android:adjustViewBounds="true"
         android:scaleType="fitCenter"
         android:layout_below="@id/logo"
-        android:layout_marginLeft="30dp"
+        android:layout_marginLeft="35dp"
         android:contentDescription="electric guitar"
         />
     <TextView
@@ -43,9 +45,9 @@
         android:layout_height="wrap_content"
         android:text="Electric    guitars"
         android:layout_below="@id/electric"
-        android:layout_marginLeft="30dp"
+        android:layout_marginLeft="35dp"
         android:textAlignment="center"
-        android:fontFamily=""
+        android:fontFamily="@font/chakra_petch_semibold"
         />
 
     <ImageButton
@@ -78,7 +80,7 @@
         android:adjustViewBounds="true"
         android:scaleType="fitCenter"
         android:layout_below="@id/elcDesc"
-        android:layout_marginLeft="30dp"
+        android:layout_marginLeft="35dp"
         android:contentDescription="classical guitar"
         />
     <TextView
@@ -87,7 +89,7 @@
         android:layout_height="wrap_content"
         android:text="Classical guitars"
         android:layout_below="@id/classical"
-        android:layout_marginLeft="30dp"
+        android:layout_marginLeft="35dp"
         android:textAlignment="center"
         />
     <ImageButton
