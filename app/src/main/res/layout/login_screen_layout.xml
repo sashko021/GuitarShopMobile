@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/gradient">
+    android:background="@drawable/gradient"
+    android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
 
     <ImageView
         android:id="@+id/Logo"
@@ -15,139 +16,52 @@
         android:layout_centerHorizontal="true">
 
     </ImageView>
-    <RelativeLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_below="@id/Logo"
-    android:layout_centerHorizontal="true"
-        android:id="@+id/credentials_layout">
-    <TextView
-        android:id="@+id/login_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/LOGIN"
-        android:textColor="@color/white"
-        android:fontFamily="@font/darkson_regular"
-        android:textSize="30sp"
-        android:layout_centerHorizontal="true">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_below="@id/Logo"
+        android:fontFamily="@font/darkson_regular">
 
-    </TextView>
-    <EditText
-        android:id="@+id/username"
-        android:layout_width="300dp"
-        android:layout_height="48dp"
-        android:hint="@string/username"
-        android:textColorHint="@color/white"
-        android:layout_below="@id/login_text"
-        android:layout_centerHorizontal="true"
-        android:textColor="@color/white"
-        android:drawableStart="@drawable/baseline_person_24_white"
-        android:textAlignment="center"
-        android:inputType="textPersonName"
-        android:autofillHints="name">
-
-    </EditText>
-    <EditText
-        android:id="@+id/password"
-        android:layout_width="300dp"
-        android:layout_height="48dp"
-        android:hint="@string/password"
-        android:textColorHint="@color/white"
-        android:textColor="@color/white"
-        android:layout_below="@id/username"
-        android:layout_centerHorizontal="true"
-        android:drawableStart="@drawable/baseline_lock_24_white"
-        android:textAlignment="center"
-        android:inputType="textPassword">
-
-    </EditText>
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/buttons"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/credentials_layout"
-        android:layout_margin="35dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginBottom="35dp"
-        android:paddingStart="10dp"
-        android:paddingEnd="10dp">
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/Login_button"
-            android:layout_width="150dp"
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tab_layout"
+            android:layout_gravity="center"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:background="@drawable/buttons"
-            android:contentDescription="@string/login"
             android:fontFamily="@font/darkson_regular"
-            android:text="@string/login"
-            android:textColor="@color/white"
-            android:textSize="30sp" />
+            app:tabTextColor="@color/white"
+            app:tabTextAppearance="@style/tab_text"
+            app:tabIndicatorHeight="3dp"
+            app:tabIndicatorAnimationDuration="@integer/material_motion_duration_medium_1"
+            app:tabIndicatorColor="@color/Bright_yellow"
+            android:background="#00000000"
+            >
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/login"
+
+                >
+
+            </com.google.android.material.tabs.TabItem>
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/sign_up">
+
+            </com.google.android.material.tabs.TabItem>
+        </com.google.android.material.tabs.TabLayout>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:layout_width="match_parent"
+        android:id="@+id/pager"
+        android:layout_height="match_parent">
 
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/signup_btn"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
-            android:layout_toEndOf="@id/Login_button"
-            android:background="@drawable/buttons"
-            android:backgroundTint="@null"
-            android:contentDescription="@string/sign_up"
-            android:fontFamily="@font/darkson_regular"
-            android:text="@string/sign_up"
-            android:textColor="@color/white"
-            android:textSize="30sp" />
+    </androidx.viewpager2.widget.ViewPager2>
 
-        <TextView
-            android:id="@+id/or"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/Login_button"
-            android:layout_centerHorizontal="true"
-            android:fontFamily="@font/darkson_regular"
-            android:text="OR"
-            android:textColor="@color/white"
-            android:textSize="30sp">
+    </LinearLayout>
 
-        </TextView>
-
-        <TextView
-            android:id="@+id/sign_up_with"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/or"
-            android:layout_centerHorizontal="true"
-            android:text="@string/sign_up_with"
-            android:textColor="@color/white">
-
-        </TextView>
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:layout_marginVertical="15dp"
-            android:id="@+id/google_btn"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_below="@id/sign_up_with"
-            android:layout_marginTop="6dp"
-            android:adjustViewBounds="true"
-            android:drawableStart="@drawable/google"
-            android:text="@string/sign_up_with_google"
-            android:background="@drawable/google_btn"
-            android:textColor="@color/black"
-            android:paddingStart="20dp"
-            android:paddingEnd="20dp">
-
-        </androidx.appcompat.widget.AppCompatButton>
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/buttons"
-        android:layout_marginTop="15dp"
-        android:layout_centerHorizontal="true"
-        />
 </RelativeLayout>
 

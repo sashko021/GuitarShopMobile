@@ -71,7 +71,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SignUpScreen"
+            android:name=".SignUpFragment"
             android:exported="true">
             <intent-filter>
                 <action android:name="com.example.guitarshopmobile.SignUpScreen" />
