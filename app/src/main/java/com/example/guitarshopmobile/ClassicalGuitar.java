@@ -21,9 +21,9 @@ public class ClassicalGuitar extends AppCompatActivity {
         RecyclerView recyclerView = findViewById(R.id.recycler3);
 
         List<Items> items = new ArrayList<Items>();
-        items.add(new Items(R.drawable.classical1,"120$"));
-        items.add(new Items(R.drawable.classical2,"170$"));
-        items.add(new Items(R.drawable.classical3,"250$"));
+        items.add(new Items("7",R.drawable.classical1,115,"Valencia VC104BUS"));
+        /*items.add(new Items(R.drawable.classical2,"170"));
+        items.add(new Items(R.drawable.classical3,"250"));*/
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(new MyAdapter(getApplicationContext(),items));

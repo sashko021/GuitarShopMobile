@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cart"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".Cart"
+    android:background="@drawable/gradient">
+  <include
+      layout="@layout/menubar"/>
+
+  <androidx.recyclerview.widget.RecyclerView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:id="@+id/cartrecycler"
+      android:background="@drawable/gradient"
+      android:layout_marginTop="35dp"
+      />
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/total"
+    android:layout_below="@id/cartrecycler"
+    android:text=" Total: 260$"
+    android:layout_marginLeft="300dp"
+  />
+  <Button
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+    android:id="@+id/orderbtn"
+    android:text="Check out"
+    android:layout_below="@id/total"
+      android:layout_marginLeft="285dp"
+    />
+</RelativeLayout>

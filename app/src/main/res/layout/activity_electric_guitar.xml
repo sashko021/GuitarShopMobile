@@ -7,12 +7,15 @@
     android:layout_height="wrap_content"
     tools:context=".ElectricGuitar"
     android:background="@drawable/gradient">
+    <include
+        layout="@layout/menubar"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/recycler"
         android:background="@drawable/gradient"
+        android:layout_marginTop="35dp"
 />
 
 </RelativeLayout>

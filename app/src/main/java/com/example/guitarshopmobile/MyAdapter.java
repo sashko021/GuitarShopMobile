@@ -29,8 +29,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
 //        holder.descView.setText(items.get(position).getDescription());
+        holder.name.setText(items.get(position).getName());
         holder.priceView.setText(items.get(position).getPrice());
-        holder.imgGuitar.setImageResource(items.get(position).getImage());
+        holder.imgGuitar.setImageResource(items.get(position).getImgUrl());
     }
 
     @Override

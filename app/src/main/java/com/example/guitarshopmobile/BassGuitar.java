@@ -24,9 +24,9 @@ public class BassGuitar extends AppCompatActivity {
         RecyclerView recyclerView = findViewById(R.id.recycler4);
 
         List<Items> items = new ArrayList<Items>();
-        items.add(new Items(R.drawable.bass1,"120$"));
-        items.add(new Items(R.drawable.bass2,"170$"));
-        items.add(new Items(R.drawable.bass3,"250$"));
+        items.add(new Items("10",R.drawable.bass2,108,"J&D Bass Black"));
+        /*items.add(new Items(R.drawable.bass2,"170"));
+        items.add(new Items(R.drawable.bass3,"250"));*/
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(new MyAdapter(getApplicationContext(),items));

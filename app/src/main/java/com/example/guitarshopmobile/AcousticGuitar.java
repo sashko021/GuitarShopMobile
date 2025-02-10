@@ -24,9 +24,9 @@ public class AcousticGuitar extends AppCompatActivity {
         RecyclerView recyclerView = findViewById(R.id.recycler2);
 
         List<Items> items = new ArrayList<Items>();
-        items.add(new Items(R.drawable.acoustic1,"120$"));
-        items.add(new Items(R.drawable.acoustic2,"170$"));
-        items.add(new Items(R.drawable.acoustic3,"250$"));
+        items.add(new Items("4",R.drawable.acoustic1,345,"Orangewood Brooklyn"));
+        /*items.add(new Items(R.drawable.acoustic2,"170"));
+        items.add(new Items(R.drawable.acoustic3,"250"));*/
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(new MyAdapter(getApplicationContext(),items));

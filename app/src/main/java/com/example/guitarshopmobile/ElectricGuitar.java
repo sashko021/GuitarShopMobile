@@ -26,11 +26,11 @@ public class ElectricGuitar extends AppCompatActivity {
         RecyclerView recyclerView = findViewById(R.id.recycler);
 
         List<Items> items = new ArrayList<Items>();
-        items.add(new Items(R.drawable.es335,"470$"));
-        items.add(new Items(R.drawable.es335_2,"470$"));
-        items.add(new Items(R.drawable.es335,"470$"));
+        items.add(new Items("1",R.drawable.es335,3500,"Gibson ES-225 Cherry"));
+        /*items.add(new Items(R.drawable.es335_2,"470"));
+        items.add(new Items(R.drawable.es335,"470"));*/
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(new MyAdapter(getApplicationContext(),items));
+        recyclerView.setAdapter(new MyAdapter(getApplicationContext(), items));
     }
 }

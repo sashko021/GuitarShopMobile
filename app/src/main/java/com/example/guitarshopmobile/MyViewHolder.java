@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 public class MyViewHolder extends RecyclerView.ViewHolder {
 
     ImageButton imgGuitar;
+    TextView name;
     TextView priceView;
     Button cartButton;
     ImageButton description;
@@ -19,6 +20,7 @@ public class MyViewHolder extends RecyclerView.ViewHolder {
     public MyViewHolder(@NonNull View itemView) {
         super(itemView);
         imgGuitar = itemView.findViewById(R.id.imgbtn1);
+        name = itemView.findViewById(R.id.name);
         /*description = itemView.findViewById(R.id.desc1);*/
         priceView = itemView.findViewById(R.id.price1);
         cartButton = itemView.findViewById(R.id.btn1);
